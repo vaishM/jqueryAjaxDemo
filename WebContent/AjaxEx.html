@@ -9,6 +9,7 @@
 $(document).ready(function(){
 	$('p#para').hide();
 	
+	
 	$('a#pAnchor').click(function(){
 		
 		if (document.getElementById('#para')){
@@ -32,7 +33,14 @@ $(document).ready(function(){
 		    alert("it's butter");
 		}
 		
-		
+		});
+	
+	$('#myButton').click(function(){		
+			alert("readio button clicked");
+			$.get("http://localhost:8080/jqueryAjaxDemo/WorkingServlet",
+			function(data){
+			 alert("Data Loaded: " + data);
+			});
 	});
 });
 </script>
@@ -51,6 +59,7 @@ $(document).ready(function(){
 <input type ="radio" name="option" value="butter"></input>Butter<br>
 
 </div>
+<input type="button" id="myButton" name="getRadioSelectedData" value="getRadioSelectedData" value="Get Data"> </input>
 </form>
 
 </body>
